@@ -11,11 +11,11 @@ jQuery.each(includeTimes, function appendElements(){
         $('<div/>', {'class': 'row'})
             .append(
             $('<div/>', {'class': 'col hour'}).append(
-                $('<h2/>', {text: includeTimes[arrayIndicator]})
+                $('<h2/>', {'class': 'time-block', text: includeTimes[arrayIndicator]})
             ))
             .append(
-                $('<div/>', {'class': 'col-9'}).append(
-                    $('<p/>', {text: 'description'})
+                $('<div/>', {'class': 'task-group col-9 description'}).append(
+                    $('<p/>', {text: 'hello'})
                 ))
             .append(
                 $('<div/>', {'class': 'col'}).append(
@@ -26,3 +26,18 @@ jQuery.each(includeTimes, function appendElements(){
     arrayIndicator++;
 });
 
+// Allow input text for task
+$(".task-group").on("click", "p", function() {
+    var text = $(this).text().trim();
+    var textInput = $("<textarea>").addClass("form-control").val(text);  
+    $(this).replaceWith(textInput);
+    textInput.trigger("focus");
+  });
+
+var taskTime = function() {
+    // Current Time
+    $(this).text(moment().format("HH:mm"));
+    var time = moment(this, "L").set("hour", 17);
+console.log(this);
+}
+taskTime();
