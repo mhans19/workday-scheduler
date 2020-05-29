@@ -15,7 +15,7 @@ jQuery.each(includeTimes, function appendElements(){
             ))
             .append(
                 $('<div/>', {'id': 'slot' + arrayIndicator, 'class': 'task-group col-9 description'}).append(
-                    $('<p/>', {text: 'hello'})
+                    $('<textarea/>', {'class': 'form-control'})
                 ))
             .append(
                 $('<div/>', {'class': 'col'}).append(
@@ -26,7 +26,7 @@ jQuery.each(includeTimes, function appendElements(){
     var calT = moment(calTimes[arrayIndicator], 'HH');
     if (moment().diff(calT, 'minutes') < 0) {
         $("#slot" + arrayIndicator).addClass("future");
-    } else if (moment().diff(calT, 'minutes') > 60) {
+    } else if (moment().diff(calT, 'minutes') >= 60) {
         $("#slot" + arrayIndicator).addClass("past");
     } else {
         $("#slot" + arrayIndicator).addClass("present");
@@ -36,7 +36,7 @@ jQuery.each(includeTimes, function appendElements(){
 });
 
 // Allow input text for task
-$(".task-group").on("click", "p", function() {
+$(".task-group").on("click", "textarea", function() {
     var text = $(this).text().trim();
     var textInput = $("<textarea>").addClass("form-control").val(text);  
     $(this).replaceWith(textInput);
