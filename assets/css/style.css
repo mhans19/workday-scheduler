@@ -4,11 +4,10 @@ body {
   line-height: 1;
 }
 
-textarea {
+.textarea {
   background: transparent;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
 }
 
 .jumbotron {
@@ -31,6 +30,11 @@ textarea {
 
 .form-control:valid {
   background: transparent;
+  color: black;
+  border: none;
+}
+.form-control:focus {
+  margin: 10px;
 }
 
 .row {

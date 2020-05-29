@@ -15,7 +15,7 @@ jQuery.each(includeTimes, function appendElements(){
             ))
             .append(
                 $('<div/>', {'id': 'slot' + arrayIndicator, 'class': 'task-group col-9 description'}).append(
-                    $('<textarea/>', {'class': 'form-control'})
+                    $('<p/>', {'class': 'form-control textarea'})
                 ))
             .append(
                 $('<div/>', {'class': 'col'}).append(
@@ -36,7 +36,7 @@ jQuery.each(includeTimes, function appendElements(){
 });
 
 // Allow input text for task
-$(".task-group").on("click", "textarea", function() {
+$(".task-group").on("click", "p", function() {
     var text = $(this).text().trim();
     var textInput = $("<textarea>").addClass("form-control").val(text);  
     $(this).replaceWith(textInput);
