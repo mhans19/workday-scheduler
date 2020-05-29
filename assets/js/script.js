@@ -1,7 +1,7 @@
 // Add Global Variables/Arrays
 var arrayIndicator = 0;
-var includeTimes = ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM'];
-
+var includeTimes = ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM', '9PM'];
+var calTimes = ['09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21'];
 // Add Current Date
 $("#currentDay").text(moment().format("dddd, LL"));
 
@@ -14,7 +14,7 @@ jQuery.each(includeTimes, function appendElements(){
                 $('<h2/>', {'class': 'time-block', text: includeTimes[arrayIndicator]})
             ))
             .append(
-                $('<div/>', {'class': 'task-group col-9 description'}).append(
+                $('<div/>', {'id': 'slot' + arrayIndicator, 'class': 'task-group col-9 description'}).append(
                     $('<p/>', {text: 'hello'})
                 ))
             .append(
@@ -23,6 +23,15 @@ jQuery.each(includeTimes, function appendElements(){
                         $('<span/>', {'class': 'oi oi-check'})
             )))
     )
+    var calT = moment(calTimes[arrayIndicator], 'HH');
+    if (moment().diff(calT, 'minutes') < 0) {
+        $("#slot" + arrayIndicator).addClass("future");
+    } else if (moment().diff(calT, 'minutes') > 60) {
+        $("#slot" + arrayIndicator).addClass("past");
+    } else {
+        $("#slot" + arrayIndicator).addClass("present");
+    }
+
     arrayIndicator++;
 });
 
@@ -33,11 +42,3 @@ $(".task-group").on("click", "p", function() {
     $(this).replaceWith(textInput);
     textInput.trigger("focus");
   });
-
-var taskTime = function() {
-    // Current Time
-    $(this).text(moment().format("HH:mm"));
-    var time = moment(this, "L").set("hour", 17);
-console.log(this);
-}
-taskTime();
