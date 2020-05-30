@@ -1,5 +1,5 @@
 # Module 5: Weekly Challenge<br><br>
-<b>Deployment</b><br>
+<b><font-size: 20px>Deployment</font-size></b><br>
 <b>Website URL:</b> https://mhans19.github.io/workday-scheduler/<br>
 <b>github URL for Repository:</b> https://github.com/mhans19/workday-scheduler<br>
 <br>
@@ -11,8 +11,7 @@
         <li>jQuery</li>
         <li>Bootstrap</li>
         <li>Moment.js</li>
-    </ul><br>
-<br>    
+    </ul><br>    
 <b>Contributor & Maintainer:</b><br>
     Morgan Hansen<br>
     (208) 807-4913<br>
