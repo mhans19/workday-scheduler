@@ -85,3 +85,9 @@ body {
   transition: all .3s ease-in-out;
   color: grey;
 }
+
+/* BEGIN media query for smaller desktop screens and smaller */
+@media screen and (max-width: 576px) {
+.row {
+  margin-bottom: 80px;
+}

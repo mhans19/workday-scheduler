@@ -13,19 +13,18 @@ jQuery.each(includeTimes, function appendElements(){
     $('#timeslot').append(
         $('<div/>', {'class': 'row'})
             .append(
-            $('<div/>', {'class': 'col-lg col-md col-sm col-xs hour'}).append(
+            $('<div/>', {'class': 'col-12 col-sm-2 col-md-2 col-lg-1 hour'}).append(
                 $('<h2/>', {'class': 'time-block', text: includeTimes[arrayIndicator]})
             ))
             .append(
-                $('<div/>', {'id': 'slot' + arrayIndicator, 'class': 'task-group col-lg-9 col-md-8 col-sm-7 col-xs description'}).append(
+                $('<div/>', {'id': 'slot' + arrayIndicator, 'class': 'col-12 col-sm-8 col-md-8 col-lg-10 task-group description'}).append(
                     $('<p/>', {'class': 'form-control textarea'})
                 ))
             .append(
-                    $('<button/>', {'id': 'saveButton' + includeTimes[arrayIndicator], 'class': 'col-lg col-md col-sm col-xs saveBtn'}).append(
+                    $('<button/>', {'id': 'saveButton' + includeTimes[arrayIndicator], 'class': 'col-12 col-sm-2 col-md-2 col-lg-1 saveBtn'}).append(
                         $('<span/>', {'class': 'oi oi-check'})
             )))
 
-  
     var calT = moment(calTimes[arrayIndicator], 'HH');
     if (moment().diff(calT, 'minutes') < 0) {
         $("#slot" + arrayIndicator).addClass("future");
@@ -37,7 +36,6 @@ jQuery.each(includeTimes, function appendElements(){
 
     arrayIndicator++;
 });
-
 
 // Allow text input/change for task
 $(".task-group").on("click", "p", function() {
@@ -51,9 +49,6 @@ $(".task-group").on("click", "p", function() {
 setInterval(function() {
     window.location.reload();
 }, (1000 * 60) * 10);
-
-
-var tasks = [];
 
 // Save to Local Storage
 $('.saveBtn').on('click', function(){
