@@ -1,37 +1,38 @@
-# Module 5: Weekly Challenge<br><br>
-<b>Deployment</b><br>
-<b>Website URL:</b> https://mhans19.github.io/workday-scheduler/<br>
-<b>github URL for Repository:</b> https://github.com/mhans19/workday-scheduler<br>
-<br>
-<b>Contributor & Maintainer:</b><br>
-    Morgan Hansen<br>
-    (208) 807-4913<br>
-    mdhansen19@gmail.com<br>
-<br>
-<b>Purpose</b><br>
-    The purpose of this challenge was to create a daily planner scheduled during standard business hours. The application would not only allow users to input and modify events for each hour block of the planner, but it would also store the information in local storage and retrieve it upon loading the webpage. The planner was to be color coordinated, according the past, current, and future time blocks. For full functionality with screenshots, please see below.<br>
-<br>
-<b>User Story</b><br>
-    AS AN employee with a busy schedule<br>
-    I WANT to add important events to a daily planner<br>
-    SO THAT I can manage my time effectively<br>
-<br>
-<b>Acceptance Criteria</b><br>
-    GIVEN I am using a daily planner to create a schedule<br>
-    WHEN I open the planner<br>
-    THEN the current day is displayed at the top of the calendar<br>
-    WHEN I scroll down<br>
-    THEN I am presented with time blocks for standard business hours<br>
-    WHEN I view the time blocks for that day<br>
-    THEN each time block is color-coded to indicate whether it is in the past, present, or future<br>
-    WHEN I click into a time block<br>
-    THEN I can enter an event<br>
-    WHEN I click the save button for that time block<br>
-    THEN the text for that event is saved in local storage<br>
-    WHEN I refresh the page<br>
-    THEN the saved events persist<br>
-<br>
-<b>This application was build with the following:</b>
+# Module 5: Weekly Challenge  
+  
+# **Deployment**  
+**Website URL:** https://mhans19.github.io/workday-scheduler/  
+**github URL for Repository:** https://github.com/mhans19/workday-scheduler  
+   
+# **Contributor & Maintainer:**  
+    Morgan Hansen  
+    (208) 807-4913  
+    mdhansen19@gmail.com  
+  
+# **Purpose**   
+    The purpose of this challenge was to create a daily planner scheduled during standard business hours. The application would not only allow users to input and modify events for each hour block of the planner, but it would also store the information in local storage and retrieve it upon loading the webpage. The planner was to be color coordinated, according the past, current, and future time blocks. For full functionality with screenshots, please see below.  
+   
+# **User Story**  
+    AS AN employee with a busy schedule  
+    I WANT to add important events to a daily planner  
+    SO THAT I can manage my time effectively  
+  
+# **Acceptance Criteria**  
+    GIVEN I am using a daily planner to create a schedule  
+    WHEN I open the planner  
+    THEN the current day is displayed at the top of the calendar  
+    WHEN I scroll down  
+    THEN I am presented with time blocks for standard business hours  
+    WHEN I view the time blocks for that day  
+    THEN each time block is color-coded to indicate whether it is in the past, present, or future  
+    WHEN I click into a time block  
+    THEN I can enter an event  
+    WHEN I click the save button for that time block  
+    THEN the text for that event is saved in local storage  
+    WHEN I refresh the page  
+    THEN the saved events persist  
+   
+# **This application was build with the following:**  
     <ul>
         <li>HTML</li>
         <li>CSS</li>
@@ -39,8 +40,9 @@
         <li>jQuery</li>
         <li>Bootstrap</li>
         <li>Moment.js</li>
-    </ul><br>    
-<b>Functionality of Application</b> <br>
+    </ul>  
+    
+# **Functionality of Application**  
     <ol>
         <li>
         When the application loads, the user first sees the jumbotron at the top of the page, detailing the current date and last update time. The last update time reflects the last time the webpage was refreshed. If a user leaves the page open in the browser, the webpage will update every 10 minutes, allowing for the most recent information to be linked. If a user manually refreshes the page, it will restart the 10 minutes and update at the time of refresh.<br>
@@ -68,7 +70,7 @@
         </li>
         <li>
         The user can continue to add, modify, and save events throughout the day, even on their mobile device as the application is mobile-responsive.<br>
-        <img width="900" alt="mobileresponsive" src="assets/images/mobileresponsive.PNG">
+        <img width="900" height="1000" alt="mobileresponsive" src="assets/images/mobileresponsive.PNG">
         </li>
         <li>
         When the user views the browser the next day, the local storage is clear and the planner is ready for a fresh day of events.
