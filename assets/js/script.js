@@ -1,5 +1,6 @@
 // Add Global Variables/Arrays
 var arrayIndicator = 0;
+var storageCount = 0;
 var includeTimes = ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM'];
 var calTimes = ['09', '10', '11', '12', '13', '14', '15', '16', '17'];
 
@@ -12,19 +13,18 @@ jQuery.each(includeTimes, function appendElements(){
     $('#timeslot').append(
         $('<div/>', {'class': 'row'})
             .append(
-            $('<div/>', {'class': 'col hour'}).append(
+            $('<div/>', {'class': 'col-lg col-md col-sm col-xs hour'}).append(
                 $('<h2/>', {'class': 'time-block', text: includeTimes[arrayIndicator]})
             ))
             .append(
-                $('<div/>', {'id': 'slot' + arrayIndicator, 'class': 'task-group col-9 description'}).append(
+                $('<div/>', {'id': 'slot' + arrayIndicator, 'class': 'task-group col-lg-9 col-md-8 col-sm-7 col-xs description'}).append(
                     $('<p/>', {'class': 'form-control textarea'})
                 ))
             .append(
-                $('<div/>', {'class': 'col'}).append(
-                    $('<button/>', {'class': 'saveBtn'}).append(
+                    $('<button/>', {'id': 'saveButton' + includeTimes[arrayIndicator], 'class': 'col-lg col-md col-sm col-xs saveBtn'}).append(
                         $('<span/>', {'class': 'oi oi-check'})
             )))
-    )
+
   
     var calT = moment(calTimes[arrayIndicator], 'HH');
     if (moment().diff(calT, 'minutes') < 0) {
@@ -39,7 +39,7 @@ jQuery.each(includeTimes, function appendElements(){
 });
 
 
-// Allow input text for task
+// Allow text input/change for task
 $(".task-group").on("click", "p", function() {
     var text = $(this).text().trim();
     var textInput = $("<textarea>").addClass("form-control").val(text);  
@@ -51,3 +51,21 @@ $(".task-group").on("click", "p", function() {
 setInterval(function() {
     window.location.reload();
 }, (1000 * 60) * 10);
+
+
+var tasks = [];
+
+// Save to Local Storage
+$('.saveBtn').on('click', function(){
+    var calHour = $(this).attr('id');
+    var scheduleText = $(this).siblings('div.description').children().val();
+
+    localStorage.setItem(calHour, scheduleText);
+})
+
+// Load from Local Storage
+for (var i = 0; i < includeTimes.length; i++){
+$('#slot'+ storageCount).children().text(localStorage.getItem('saveButton' + includeTimes[storageCount]));
+storageCount++;
+}
+
