@@ -56,7 +56,7 @@
         </li>
         <li>
         User entries can be modified at any time.<br>
-        <img width="1107" alt="editevents" src="assets/images/editevents.PNG">
+        <img width="1107" alt="editevents" src="assets/images/editevent.PNG">
         </li>
         <li>
         When an event is detailed and the user is ready to save, they will click on the blue save button with a checkmark to save the infrmation. A user should do this anytime they add or modify an event's details if they would like the information to be retained.<br>
@@ -68,7 +68,7 @@
         </li>
         <li>
         The user can continue to add, modify, and save events throughout the day, even on their mobile device as the application is mobile-responsive.<br>
-        <img width="1107" alt="mobileresponsive" src="assets/images/mobileresponsive.PNG">
+        <img width="900" alt="mobileresponsive" src="assets/images/mobileresponsive.PNG">
         </li>
         <li>
         When the user views the browser the next day, the local storage is clear and the planner is ready for a fresh day of events.
