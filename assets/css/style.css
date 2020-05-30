@@ -1,16 +1,11 @@
+/* BEGIN general styles*/
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
 }
-
-.textarea {
-  background: transparent;
-  resize: none;
-  color: #000000;
-  border: 0;
-}
-
+/* END general styles*/
+/* BEGIN Jumbotron styles*/
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -18,17 +13,22 @@ body {
   border-radius: 0;
   border-bottom: 10px solid black;
 }
-
+/* END Jumbotron styles*/
+/* BEGIN schedule block styles*/
+.textarea {
+  background: transparent;
+  resize: none;
+  color: #000000;
+  border: 0;
+}
 .description{
   white-space: pre-wrap;
 }
-
 .time-block{
   text-align: right;
   border-radius: 15px;
   font-size: 22px;
 }
-
 .form-control:valid {
   background: transparent;
   color: black;
@@ -37,13 +37,11 @@ body {
 .form-control:focus {
   margin: 10px;
 }
-
 .row {
   white-space: pre-wrap;
   height: 80px;
   min-height: 75px;
 }
-
 .hour {
   background-color: #ffffff;
   color: #000000;
@@ -51,25 +49,25 @@ body {
   top: 0px;
   right: 0px;
 }
-
+/* END schedule block styles*/
+/* BEGIN schedule block- TIME styles*/
 .past {
   background-color: #d3d3d3;
   color: black;
   border: 1px solid white;
 }
-
 .present {
   background-color: #ff6961;
   color: black;
   border: 1px solid white;
 }
-
 .future {
   background-color: #77dd77;
   color: black;
   border: 1px solid white;
 }
-
+/* END schedule block- TIME styles*/
+/* BEGIN button styles*/
 .saveBtn {
   border-left: 2px solid black;
   border-top-right-radius: 15px;
@@ -79,15 +77,15 @@ body {
   min-height: 75px;
   min-width: 75px;
 }
-
 .saveBtn:hover {
   font-size: 28px;
   transition: all .3s ease-in-out;
   color: grey;
 }
-
-/* BEGIN media query for smaller desktop screens and smaller */
+/* END button styles*/
+/* BEGIN media query for phones */
 @media screen and (max-width: 576px) {
 .row {
   margin-bottom: 80px;
 }
+/* END media query for phones */
